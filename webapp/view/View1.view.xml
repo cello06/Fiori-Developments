@@ -1,0 +1,46 @@
+<mvc:View controllerName="fioriodata001.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+   <Page>
+    <content>
+        <f:SimpleForm 
+         title="CRUD Process"  >    
+            <Label text="Personel Id"/>
+            <Input id="inpId"/>
+            <Label text="Personel Name"/>
+            <Input id="inpName"/>
+            <Label text="Personel Title"/>
+            <Input id="inpTitle"/>
+        </f:SimpleForm>
+    <Table
+       items="{mPers>/results}">
+          
+        <columns>
+            <Column><Text text="Personel Id"/></Column>
+            <Column><Text text="Personel Name"/></Column>
+            <Column><Text text="Personel Title"/></Column>
+        </columns>
+        <items>
+            <ColumnListItem >
+                <cells>
+                   <Text text="{mPers>PersId}"/>
+                   <Text text="{mPers>PersName}"/>
+                   <Text text="{mPers>PersTitle}"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+    </content>
+    <footer>
+        <OverflowToolbar>
+            <ToolbarSpacer />
+            <Button text="List" press=".onListButtonPress" />
+            <Button type="Accept" text="Create" press=".onCreateButtonPress" />
+            <Button text="Read" press=".onReadButtonPress"/>
+            <Button text="Update" press=".onUpdateButtonPress"/>
+            <Button type="Reject" text="Delete" press=".onDeleteButtonPress"/>
+        </OverflowToolbar>
+    </footer>
+   </Page>
+</mvc:View>
